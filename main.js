@@ -4,19 +4,22 @@ function init() {
 
 $(document).ready(init);
 
-$.ajax({
-  url: "http://157.230.17.132:3007/todos",
-  method: "GET",
-  data: ["text", "id"],
-  success: function (data){
-    console.log(data)
-    // var list = data.results;
-    printItem(data);
-  },
-  error: function() {
-    alert("Errore")
-  }
-})
+function getItems() {
+  $.ajax({
+    url: "http://157.230.17.132:3007/todos",
+    method: "GET",
+    data: ["text", "id"],
+    success: function (data){
+      console.log(data)
+
+      printItem(data);
+    },
+    error: function() {
+      alert("Errore")
+    }
+  })
+};
+  getItems();
 
   $(document).on("click", ".esc", deleteItem);
 
@@ -49,8 +52,8 @@ $.ajax({
       data: {text: text},
       success: function(data){
         $(".items").html("");
-        console.log("guada: " + data )
-        printItem(data);
+        // printItem(data);
+        getItems();
       }
     })
 
