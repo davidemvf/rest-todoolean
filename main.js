@@ -48,6 +48,8 @@ $.ajax({
       method: "POST",
       data: {text: text},
       success: function(data){
+        $(".items").html("");
+        console.log("guada: " + data )
         printItem(data);
       }
     })
@@ -63,6 +65,6 @@ $.ajax({
       var context = {text: item.text, id: item.id};
       var html    = template(context);
 
-      $(".container").append(html);
+      $(".items").append(html);
     }
   };

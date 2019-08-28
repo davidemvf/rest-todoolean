@@ -17,7 +17,7 @@
   padding: 50px 25px;
 
   overflow: hidden;
-  display: flex;
+
 }
 
 .square {
@@ -40,9 +40,15 @@
 }
 
 .add-box {
+  display: inline-block;
   border: 1px solid #4285F4;
   border-radius: 5px;
   background: #4285F4;
   padding: 10px;
   margin: 0 auto;
+}
+
+.items {
+  display: flex;
+  margin-top: 20px;
 }
